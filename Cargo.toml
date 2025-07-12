@@ -1,0 +1,26 @@
+[package]
+name = "timestamp"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+test = true
+
+[dependencies]
+chrono = "0.4.41"
+prost = { version = "0.14.1", default-features = false, features = ["derive"] }
+sea-orm = { version = "1.1.6", default-features = false, features = [
+  "with-chrono",
+] }
+serde = { version = "1.0.219" }
+sqlx = { version = "0.8.6", default-features = false }
+thiserror = { version = "2.0.12" }
+
+[features]
+
+# SQLITE
+#
+# encode timestamps as doubles
+sqlite_double = []
+# encode timestamps to 64bit integers, drop nanoseconds
+sqlite_int = []
