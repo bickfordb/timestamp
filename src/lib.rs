@@ -5,7 +5,7 @@ use prost::Message;
 use sea_orm::{QueryResult, TryGetError, sea_query};
 use serde::{Deserialize, Serialize};
 
-#[derive(Clone, Copy, PartialEq, Eq, Serialize, Deserialize, Message)]
+#[derive(Clone, Copy, PartialEq, Hash, Eq, Serialize, Deserialize, Message)]
 pub struct Timestamp {
     #[prost(int64, tag = 1)]
     pub seconds: i64,
